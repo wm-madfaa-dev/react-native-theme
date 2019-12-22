@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import ColorPaletteScreen from "../screens/ColorPalette/ColorPalette.screen";
 import ElevationScreen from "../screens/Elevation/Elevation.screen";
 import TypographyScreen from "../screens/Typography/Typography.screen";
+import Header from "../components/Header/Header";
 
 export enum ROUTES {
   Typography = "Typography",
@@ -23,7 +24,11 @@ const RootStack = createStackNavigator<RootStackParams>();
 const App = () => {
   return (
     <NavigationNativeContainer>
-      <RootStack.Navigator>
+      <RootStack.Navigator
+        screenOptions={() => ({
+          header: props => <Header {...props} />
+        })}
+      >
         <RootStack.Screen
           name={ROUTES.Typography}
           component={TypographyScreen}
