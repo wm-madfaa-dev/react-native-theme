@@ -1,8 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, ScrollView, View } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParams, ROUTES } from "../../app/app";
+import ElevationBox, {
+  Shadows,
+  shadows
+} from "../../components/ElevationBox/ElevationBox";
 
 type ElevationScreenNavigationProp = StackNavigationProp<
   RootStackParams,
@@ -17,14 +21,23 @@ interface ElevationScreenProps {
 
 const ElevationScreen: React.FC<ElevationScreenProps> = () => {
   return (
-    <View style={styles.root}>
-      <Text>Elevation Screen</Text>
-    </View>
+    <ScrollView>
+      <View style={styles.root}>
+        {Object.keys(shadows).map(shadow => (
+          <ElevationBox key={shadow} elevation={shadow as keyof Shadows} />
+        ))}
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  root: { flex: 1, alignItems: "center", justifyContent: "center" }
+  root: {
+    flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    paddingVertical: 20
+  }
 });
 
 export default ElevationScreen;
