@@ -41,13 +41,17 @@ const Header: React.FC<HeaderProps> = ({
 
 const styles = StyleSheet.create({
   root: {
-    flex: 1,
     flexDirection: "row",
     height: 60,
     backgroundColor: "#FAFAFA",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
+    elevation: 1,
+    shadowColor: "#000000",
+    shadowOffset: { height: 1, width: 0 },
+    shadowOpacity: 0.1826086956521739,
+    shadowRadius: 1
   },
   link: {
     color: "rgba(0, 0, 0, 0.54)",

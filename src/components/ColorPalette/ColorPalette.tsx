@@ -36,15 +36,11 @@ const ColorPaletteItem: React.FC<ColorPaletteItemProps> = ({
       <View style={styles.colorBorder}>
         <View style={[styles.color, { backgroundColor: color }]} />
       </View>
-      <Text
-        style={[
-          styles.label,
-          centeredLabel ? styles.centeredLabel : {},
-          type === "dark" ? styles.labelWhite : {}
-        ]}
-      >
-        {label}
-      </Text>
+      <View style={centeredLabel ? styles.centeredLabel : {}}>
+        <Text style={[styles.label, type === "dark" ? styles.labelWhite : {}]}>
+          {label}
+        </Text>
+      </View>
     </View>
   );
 };
@@ -135,7 +131,13 @@ const styles = StyleSheet.create({
     color: "#FFFFFF"
   },
   centeredLabel: {
-    position: "absolute"
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: 57,
+    height: 57,
+    alignItems: "center",
+    justifyContent: "center"
   }
 });
 
