@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationNativeContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { ThemeProvider } from "../styles/themeManager";
+import { ThemeProvider } from "../styles";
 
 import ColorPaletteScreen from "../screens/ColorPalette/ColorPalette.screen";
 import ElevationScreen from "../screens/Elevation/Elevation.screen";

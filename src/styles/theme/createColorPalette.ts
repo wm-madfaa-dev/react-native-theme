@@ -1,7 +1,15 @@
 import ColorManipulator from "color";
 import deepmerge from "deepmerge";
-import { common, grey, CommonColors, Color, indigo, pink, red } from "./colors";
-import { PartialExcept, RecursivePartial } from "./utils";
+import {
+  common,
+  grey,
+  CommonColors,
+  Color,
+  indigo,
+  pink,
+  red
+} from "../colors";
+import { PartialExcept, RecursivePartial } from "../utils";
 
 export type PaletteText = Record<
   "light" | "dark",

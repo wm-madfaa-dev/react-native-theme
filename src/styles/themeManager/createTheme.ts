@@ -1,12 +1,15 @@
 import deepmerge from "deepmerge";
-import createPalette, { PaletteOptions, Palette } from "../createColorPalette";
+import createPalette, {
+  PaletteOptions,
+  Palette
+} from "../theme/createColorPalette";
 import createTypography, {
   TypographyOptions,
   Typography
-} from "../createTypography";
-import createSpacing, { SpacingOptions, Spacing } from "../createSpacing";
-import defaultShadows, { createShadowArgs, Shadows } from "../shadows";
-import { createShadow } from "../shadows";
+} from "../theme/createTypography";
+import createSpacing, { SpacingOptions, Spacing } from "../theme/createSpacing";
+import defaultShadows, { createShadowArgs, Shadows } from "../theme/shadows";
+import { createShadow } from "../theme/shadows";
 
 export interface ThemeOptions {
   palette?: PaletteOptions;

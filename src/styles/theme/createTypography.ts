@@ -46,26 +46,26 @@ const createTypography = (options: TypographyOptions): Typography => {
       fontStyle,
       fontWeight,
       fontSize: rem * size,
-      lineHeight: lineHeight * (rem * size),
+      lineHeight: lineHeight * rem,
       textTransform: casing,
       ...allVariants
     };
   };
 
   const variants: Variants = {
-    h1: buildVariant(2.5714, 1.27, "bold", "normal"),
-    h2: buildVariant(2.2857, 0.8, "bold", "normal"),
-    h3: buildVariant(2.1428, 0.75, "bold", "normal"),
-    h4: buildVariant(1.8571, 0.8125, "bold", "normal"),
-    h5: buildVariant(1.5714, 0.6875, "bold", "normal"),
-    h6: buildVariant(1.2857, 0.75, "bold", "normal"),
-    s1: buildVariant(1.0714, 0.625, "600", "normal"),
-    s2: buildVariant(0.9285, 0.5416, "600", "normal"),
-    p1: buildVariant(1.0714, 0.75, "normal", "normal"),
-    p2: buildVariant(0.9285, 0.7222, "normal", "normal"),
-    c1: buildVariant(0.8571, 0.75, "normal", "normal"),
-    c2: buildVariant(0.8571, 0.75, "600", "normal"),
-    label: buildVariant(0.8571, 0.75, "bold", "normal", "uppercase")
+    h1: buildVariant(2.5714, 3.4285, "bold", "normal"),
+    h2: buildVariant(2.2857, 2.8571, "bold", "normal"),
+    h3: buildVariant(2.1428, 2.8571, "bold", "normal"),
+    h4: buildVariant(1.8571, 2.2857, "bold", "normal"),
+    h5: buildVariant(1.5714, 2.2857, "bold", "normal"),
+    h6: buildVariant(1.2857, 1.7142, "bold", "normal"),
+    s1: buildVariant(1.0714, 1.7142, "600", "normal"),
+    s2: buildVariant(0.9285, 1.7142, "600", "normal"),
+    p1: buildVariant(1.0714, 1.4285, "normal", "normal"),
+    p2: buildVariant(0.9285, 1.2857, "normal", "normal"),
+    c1: buildVariant(0.8571, 1.1428, "normal", "normal"),
+    c2: buildVariant(0.8571, 1.1428, "600", "normal"),
+    label: buildVariant(0.8571, 1.1428, "bold", "normal", "uppercase")
   };
 
   return deepmerge({ rem }, variants);

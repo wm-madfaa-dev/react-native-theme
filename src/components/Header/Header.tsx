@@ -1,8 +1,10 @@
 import React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, View } from "react-native";
 import { StackHeaderProps } from "@react-navigation/stack";
 
 import { ROUTES } from "../../app/app";
+
+import useStyles from "./Header.styles";
 
 export interface HeaderProps extends StackHeaderProps {}
 
@@ -11,6 +13,8 @@ const Header: React.FC<HeaderProps> = ({
   scene: { route },
   navigation: { navigate }
 }) => {
+  const styles = useStyles({});
+
   const isLinkActive = (routeName: ROUTES) => {
     return route.name === routeName ? styles.linkActive : {};
   };
@@ -38,32 +42,5 @@ const Header: React.FC<HeaderProps> = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {
-    flexDirection: "row",
-    height: 60,
-    backgroundColor: "#FAFAFA",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 15,
-    elevation: 1,
-    shadowColor: "#000000",
-    shadowOffset: { height: 1, width: 0 },
-    shadowOpacity: 0.1826086956521739,
-    shadowRadius: 1
-  },
-  link: {
-    color: "rgba(0, 0, 0, 0.54)",
-    textTransform: "uppercase",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: 12,
-    lineHeight: 16
-  },
-  linkActive: {
-    color: "rgba(0, 0, 0, 0.87)"
-  }
-});
 
 export default Header;
