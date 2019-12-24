@@ -3,10 +3,10 @@ import { StyleSheet, ScrollView, View } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParams, ROUTES } from "../../app/app";
-import ElevationBox, {
-  Shadows,
-  shadows
-} from "../../components/ElevationBox/ElevationBox";
+
+import Paper from "../../components/Paper/Paper";
+import { Shadows } from "../../styles/theme/shadows";
+import useTheme from "../../styles/themeManager/useTheme";
 
 type ElevationScreenNavigationProp = StackNavigationProp<
   RootStackParams,
@@ -20,11 +20,12 @@ interface ElevationScreenProps {
 }
 
 const ElevationScreen: React.FC<ElevationScreenProps> = () => {
+  const { shadows } = useTheme();
   return (
     <ScrollView>
       <View style={styles.root}>
         {Object.keys(shadows).map(shadow => (
-          <ElevationBox key={shadow} elevation={shadow as keyof Shadows} />
+          <Paper key={shadow} elevation={shadow as keyof Shadows} />
         ))}
       </View>
     </ScrollView>
