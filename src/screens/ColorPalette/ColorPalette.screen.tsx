@@ -5,6 +5,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParams, ROUTES } from "../../app/app";
 import ColorPalette from "../../components/ColorPalette/ColorPalette";
 import { ThemeColorPalette } from "../../components/ColorPalette/ColorPalette";
+import useTheme from "../../styles/themeManager/useTheme";
 
 type ColorPaletteScreenNavigationProp = StackNavigationProp<
   RootStackParams,
@@ -21,6 +22,9 @@ interface ColorPaletteScreenProps {
 }
 
 const ColorPaletteScreen: React.FC<ColorPaletteScreenProps> = () => {
+  const theme = useTheme();
+  console.log(JSON.stringify(theme));
+
   return (
     <ScrollView style={styles.root}>
       <ColorPalette
