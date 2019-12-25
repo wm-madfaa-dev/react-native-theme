@@ -1,11 +1,13 @@
 import React from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParams, ROUTES } from "../../app/app";
 import ColorPalette from "../../components/ColorPalette/ColorPalette";
 import { ThemeColorPalette } from "../../components/ColorPalette/ColorPalette";
 import { useTheme } from "../../styles";
+
+import useStyles from "./ColorPalette.screen.styles";
 
 type ColorPaletteScreenNavigationProp = StackNavigationProp<
   RootStackParams,
@@ -22,6 +24,7 @@ interface ColorPaletteScreenProps {
 }
 
 const ColorPaletteScreen: React.FC<ColorPaletteScreenProps> = () => {
+  const styles = useStyles({});
   const { palette } = useTheme();
 
   return (
@@ -347,12 +350,5 @@ const ColorPaletteScreen: React.FC<ColorPaletteScreenProps> = () => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: "#FAFAFA"
-  }
-});
 
 export default ColorPaletteScreen;

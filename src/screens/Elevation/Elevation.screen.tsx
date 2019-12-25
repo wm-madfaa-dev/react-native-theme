@@ -1,11 +1,13 @@
 import React from "react";
-import { StyleSheet, ScrollView, View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParams, ROUTES } from "../../app/app";
 
 import { Shadows, useTheme } from "../../styles";
 import Paper from "../../components/Paper/Paper";
+
+import useStyles from "./Elevation.screen.styles";
 
 type ElevationScreenNavigationProp = StackNavigationProp<
   RootStackParams,
@@ -19,7 +21,9 @@ interface ElevationScreenProps {
 }
 
 const ElevationScreen: React.FC<ElevationScreenProps> = () => {
+  const styles = useStyles({});
   const { shadows } = useTheme();
+
   return (
     <ScrollView>
       <View style={styles.root}>
@@ -30,16 +34,5 @@ const ElevationScreen: React.FC<ElevationScreenProps> = () => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    paddingVertical: 20,
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
 
 export default ElevationScreen;
