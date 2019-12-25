@@ -2,11 +2,11 @@
 
 react-native-theme Provides a light/dark theme to let your users adjust the appearance of your app depending on the time of day or their preference.
 
-![typography Screen](https://github.com/wm-madfaa-dev/react-native-theme/../../../../doc/assets/typographyScreen.png)
+![typography Screen](https://github.com/wm-madfaa-dev/react-native-theme/blob/master/doc/assets/typographyScreen.png)
 
-![color palette Screen](https://github.com/wm-madfaa-dev/react-native-theme/../../../../doc/assets/colorPaletteScreen.png)
+![color palette Screen](https://github.com/wm-madfaa-dev/react-native-theme/blob/master/doc/assets/colorPaletteScreen.png)
 
-![elevation Screen](https://github.com/wm-madfaa-dev/react-native-theme/../../../../doc/assets/elevationScreen.png)
+![elevation Screen](https://github.com/wm-madfaa-dev/react-native-theme/blob/master/doc/assets/elevationScreen.png)
 
 ## Table of contents
 
