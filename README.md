@@ -24,9 +24,9 @@ react-native-theme Provides a light/dark theme to let your users adjust the appe
 Install the theme module
 
 ```sh
-yarn add wm-madfaa-dev/react-native-theme#v0.0.1
+yarn add wm-madfaa-dev/react-native-styles#v0.0.2
 # or
-npm i wm-madfaa-dev/react-native-theme#v0.0.1
+npm i wm-madfaa-dev/react-native-styles#v0.0.2
 ```
 
 Run the app on you device
