@@ -1,5 +1,7 @@
 {
   "name": "theme",
+  "title": "React Native Theme App",
+  "description": "react-native-theme Provides a light/dark theme to let your users adjust the appearance of your app depending on the time of day or their preference.",
   "version": "0.0.2",
   "private": true,
   "scripts": {
