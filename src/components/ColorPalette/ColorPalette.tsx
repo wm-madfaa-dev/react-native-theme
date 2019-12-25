@@ -21,7 +21,7 @@ export interface Palette {
 
 export interface ThemeColorPaletteProps {
   title: string;
-  palette: Palette;
+  palette?: Palette;
   colors: ColorPaletteItemProps[];
 }
 
@@ -66,19 +66,26 @@ export const ThemeColorPalette: React.FC<ThemeColorPaletteProps> = ({
   return (
     <View style={styles.root}>
       <Text style={styles.title}>{title}</Text>
+      {palette && (
+        <View style={styles.colors}>
+          <ColorPaletteItem
+            label={palette.main.label}
+            color={palette.main.color}
+          />
+          <ColorPaletteItem
+            label={palette.light.label}
+            color={palette.light.color}
+          />
+          <ColorPaletteItem
+            label={palette.dark.label}
+            color={palette.dark.color}
+          />
+        </View>
+      )}
       <View style={styles.colors}>
-        <ColorPaletteItem label="Main" color={palette.main.color} />
-        <ColorPaletteItem label="Light" color={palette.light.color} />
-        <ColorPaletteItem label="Dark" color={palette.dark.color} />
-      </View>
-      <View style={styles.colors}>
-        <ColorPaletteItem centeredLabel {...palette.main} />
-        {colors.map(
-          (color, index) =>
-            color.color !== palette.main.color && (
-              <ColorPaletteItem centeredLabel key={index} {...color} />
-            )
-        )}
+        {colors.map((color, index) => (
+          <ColorPaletteItem centeredLabel key={index} {...color} />
+        ))}
       </View>
     </View>
   );

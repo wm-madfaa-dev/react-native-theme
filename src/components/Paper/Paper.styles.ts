@@ -1,6 +1,6 @@
 import { createStyleSheet } from "../../styles";
 import { ViewStyle, TextStyle, Dimensions } from "react-native";
-import { Shadows } from "../../styles/theme/shadows";
+import { Shadows } from "../../styles";
 
 const { width: screenWidth } = Dimensions.get("screen");
 

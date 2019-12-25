@@ -4,9 +4,8 @@ import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParams, ROUTES } from "../../app/app";
 
+import { Shadows, useTheme } from "../../styles";
 import Paper from "../../components/Paper/Paper";
-import { Shadows } from "../../styles/theme/shadows";
-import useTheme from "../../styles/themeManager/useTheme";
 
 type ElevationScreenNavigationProp = StackNavigationProp<
   RootStackParams,
