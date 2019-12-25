@@ -1,5 +1,7 @@
 import React from "react";
-import { View, Text, StyleSheet, ViewStyle } from "react-native";
+import { View, Text, ViewStyle } from "react-native";
+
+import useStyles from "./ColorPalette.styles";
 
 export interface ColorPaletteItemProps {
   label: string;
@@ -31,6 +33,8 @@ const ColorPaletteItem: React.FC<ColorPaletteItemProps> = ({
   centeredLabel,
   type
 }) => {
+  const styles = useStyles({});
+
   return (
     <View style={styles.colorRoot}>
       <View style={styles.colorBorder}>
@@ -46,6 +50,8 @@ const ColorPaletteItem: React.FC<ColorPaletteItemProps> = ({
 };
 
 const ColorPalette: React.FC<ColorPaletteProps> = ({ title, colors }) => {
+  const styles = useStyles({});
+
   return (
     <View style={styles.root}>
       <Text style={styles.title}>{title}</Text>
@@ -63,6 +69,8 @@ export const ThemeColorPalette: React.FC<ThemeColorPaletteProps> = ({
   palette,
   colors
 }) => {
+  const styles = useStyles({});
+
   return (
     <View style={styles.root}>
       <Text style={styles.title}>{title}</Text>
@@ -90,62 +98,5 @@ export const ThemeColorPalette: React.FC<ThemeColorPaletteProps> = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {
-    flexDirection: "column",
-    paddingVertical: 15
-  },
-  title: {
-    fontStyle: "normal",
-    fontWeight: "bold",
-    color: "rgba(0, 0, 0, 0.87)",
-    fontSize: 15,
-    lineHeight: 24,
-    marginHorizontal: 15
-  },
-  colors: {
-    flexDirection: "row",
-    flexWrap: "wrap"
-  },
-  colorRoot: {
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    marginVertical: 10,
-    marginHorizontal: 10
-  },
-  colorBorder: {
-    padding: 5,
-    borderWidth: 1,
-    borderColor: "#202020",
-    marginBottom: 5,
-    borderRadius: 50
-  },
-  color: {
-    width: 45,
-    height: 45,
-    borderRadius: 50
-  },
-  label: {
-    fontStyle: "normal",
-    fontWeight: "normal",
-    color: "rgba(0, 0, 0, 0.87)",
-    fontSize: 12,
-    lineHeight: 16
-  },
-  labelWhite: {
-    color: "#FFFFFF"
-  },
-  centeredLabel: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: 57,
-    height: 57,
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
 
 export default ColorPalette;
